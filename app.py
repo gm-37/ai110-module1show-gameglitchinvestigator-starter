@@ -1,6 +1,7 @@
 import random
 import streamlit as st
 
+#FIX: (hints) imported check_guess from logic_utils.py after refactoring using Claude agent
 from logic_utils import check_guess
 
 def get_range_for_difficulty(difficulty: str):
@@ -74,9 +75,9 @@ st.sidebar.caption(f"Attempts allowed: {attempt_limit}")
 
 if "secret" not in st.session_state:
     st.session_state.secret = random.randint(low, high)
-#FIXME: attempt counts are off by 1
+#FIX: attempts start at 0 to be consistent, suggested by Claude agent
 if "attempts" not in st.session_state:
-    st.session_state.attempts = 1
+    st.session_state.attempts = 0
 
 if "score" not in st.session_state:
     st.session_state.score = 0
@@ -89,10 +90,15 @@ if "history" not in st.session_state:
 
 st.subheader("Make a guess")
 
-st.info(
-    f"Guess a number between 1 and 100. "
-    f"Attempts left: {attempt_limit - st.session_state.attempts}"
-)
+# FIX: (attempts) render this AFTER the submit/increment logic so the counter reflects
+# the guess just made, as suggested by Claude agent.
+attempts_box = st.empty()
+
+def render_attempts_box():
+    attempts_box.info(
+        f"Guess a number between 1 and 100. "
+        f"Attempts left: {attempt_limit - st.session_state.attempts}"
+    )
 
 with st.expander("Developer Debug Info"):
     st.write("Secret:", st.session_state.secret)
@@ -121,6 +127,8 @@ if new_game:
     st.rerun()
 
 if st.session_state.status != "playing":
+    #FIX: (attempts) update info box with new attemped number
+    render_attempts_box()
     if st.session_state.status == "won":
         st.success("You already won. Start a new game to play again.")
     else:
@@ -138,6 +146,7 @@ if submit:
     else:
         st.session_state.history.append(guess_int)
 
+        #FIX: (hints) secret no longer returned as a string on even-numbered guesses, change assisted by Claude agent
         secret = st.session_state.secret
 
         outcome, message = check_guess(guess_int, secret)
@@ -166,6 +175,8 @@ if submit:
                     f"The secret was {st.session_state.secret}. "
                     f"Score: {st.session_state.score}"
                 )
+
+render_attempts_box()
 
 st.divider()
 st.caption("Built by an AI that claims this code is production-ready.")

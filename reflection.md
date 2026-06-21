@@ -27,16 +27,30 @@ Document at least 3 bugs you found. Add rows as needed.
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
+
+I used ClaudeCode on this project as an agent.
+
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+
+One suggestion Claude gave me that was correct was that the reason the hints were off was just the string message returned for each guess. "Too Low" was paired with "Go lower!" and "Too High" was paired with "Go higher!" so I was able to fix this by switching the messages. I verified this by reading through the code myself (the logic of the hints and when they were returned) and running the game a few times.
+
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+
+One suggestion Claude gave me that was ____ was ____.
 
 ---
 
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
+
+I decided a bug was fixed when I wrote tests with the help of Claude to test my fixes and they passed.
+
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
+
+
+
 - Did AI help you design or understand any tests? How?
 
 ---

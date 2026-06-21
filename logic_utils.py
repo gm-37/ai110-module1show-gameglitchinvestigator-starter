@@ -18,6 +18,7 @@ def check_guess(guess, secret):
 
     outcome examples: "Win", "Too High", "Too Low"
     """
+    #FIX: (hints) Refactored logic into logic_utils.py using Claude agent
     if guess == secret:
         return "Win", "🎉 Correct!"
 
