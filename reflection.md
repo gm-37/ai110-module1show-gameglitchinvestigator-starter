@@ -61,11 +61,21 @@ Yes! The AI helped with the slightly advanced tests for testing the hint message
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 
+Streamlit doesn't work like a normal GUI framwork where it is constantly alive and reacting to events. Instead, every time a user interacts with the page by clicking a button (for example), streamlit runs the python script from top to bottom again. So to remember things across reruns of the code, streamlit has session state which keeps track of values that you want to build upon as a game progresses, staarting with st.
+
 ---
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+
+I like collaborating with AI on coding projects because it allows me to ask questions easily if I don't understand something and hear something I hadn't thought about. I got good practice with checking Claude's edits before implementing them and I think that was also a helpful skill, as well as using Git commits to document/track big changes.
+
 - What is one thing you would do differently next time you work with AI on a coding task?
+
+I wouldn't rely on Claude or AI as much to catch and lead me through bugs, and I should get better at trying to identify things myself and using Claude as a tool for verification and analytical information.
+
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+I used to be wary about AI-generated code but I see that it's actually better quality and more helpful than I thought now that I know how to use it.

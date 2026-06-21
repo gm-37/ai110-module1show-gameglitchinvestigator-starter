@@ -26,18 +26,26 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+
+The player has limited attempts to guess the secret number, with hints provided as to whether their guesses are too high or too low.
+
 - [ ] Detail which bugs you found.
+
+Bugs were found in the game such as incorrect hints, attempt numbers not updating correctly initially, and certain features not updating with changing difficulty.
+
 - [ ] Explain what fixes you applied.
+
+Hints were fixed to display correct messages after player guesses and instructions display correct number of attempts at beginning of the game and throughout.
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. User enters a guess of 50
+2. Game returns "Too High"
+3. User enters a guess of 25 -> "Too Low"
+4. Score updates correctly after each guess, and hints guide the player's guesses
+5. Game ends after player guesses correctly or runs out of attempts
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
