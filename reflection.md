@@ -14,9 +14,13 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| Guess 100 | "Go lower" hint | "Go higher" hint shown | none |
+
+| Guess incorrect number before guessing correctly | Score displayed in debug info matches score given | Debug info says score is -10 while score displayed is 40 | none |
+
+| Switching game to easy mode | Blue instruction box says "Guess a number between 1 and 20" | Still says "Guess a number between 1 and 100" | none |
+
+| Guess 50 first | Attempts decrease by 1, and since secret is 42 hint should say "Go lower" | Attempts don't change for first guess and hint says "Go higher" | none |
 
 ---
 

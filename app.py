@@ -28,7 +28,7 @@ def parse_guess(raw: str):
 
     return True, value, None
 
-
+#FIXME: Logic breaks here (hint messages, str conversion)
 def check_guess(guess, secret):
     if guess == secret:
         return "Win", "🎉 Correct!"
