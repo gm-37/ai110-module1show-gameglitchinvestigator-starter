@@ -36,7 +36,7 @@ One suggestion Claude gave me that was correct was that the reason the hints wer
 
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
-One suggestion Claude gave me that was ____ was ____.
+One suggestion Claude gave me that was misleading was that that the except branch was not needed in the original check_guess function. This wasn't exactly true because the original code sometimes converted the "secret" number into a string, in which case a TypeError exception would be thrown. I verified this by asking Claude why the except was there in the first place and then reading the code where Claude pointed to (the converting to a string part). I was able to further discuss with Claude that it wouldn't be needed if we fixed the string conversion issue first.
 
 ---
 
@@ -49,9 +49,11 @@ I decided a bug was fixed when I wrote tests with the help of Claude to test my 
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
 
-
+I ran a test to check the results/outputs of the hints after refactoring and fixing the bugs in the code. It tested guesses that were too high, too low, and just right, and it told me that the fixed code was working correctly.
 
 - Did AI help you design or understand any tests? How?
+
+Yes! The AI helped with the slightly advanced tests for testing the hint messages after debugging the code, though I had to move it to the right file.
 
 ---
 
